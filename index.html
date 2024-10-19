@@ -34,9 +34,26 @@
 			visibility: visible; /* Show it */
 			transition-delay: 0.5s;
 		}
-		body {
-			overflow-x: hidden; /* Prevent horizontal scrollbar */
-		}
+		
+		.container {
+    width: 100%; /* Make sure the container uses the full width */
+    padding-right: 15px; /* Add some padding for small devices */
+    padding-left: 15px; /* Add some padding for small devices */
+    max-width: 100%; /* Prevent container from exceeding viewport */
+}
+.row {
+    margin-right: 0; /* Reset margins */
+    margin-left: 0; /* Reset margins */
+}
+
+img {
+    max-width: 100%; /* Ensure images scale down */
+    height: auto; /* Maintain aspect ratio */
+}
+
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width */
+}
 
     </style>
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
@@ -174,6 +191,12 @@
                 }
             }
         });
+    }
+
+	if ($(window).width() <= 767) {
+        setTimeout(function() {
+            $('.fade-in').addClass('visible'); // Show with delay without scrolling
+        }, 500); // 500 ms delay before adding the class
     }
 
     // Trigger checkVisibility on scroll
