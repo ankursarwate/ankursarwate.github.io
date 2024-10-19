@@ -92,7 +92,7 @@ img {
 		
 		<div class="row section topspace">
 			<div class="col-md-12">
-				<p class="lead text-center text-muted" style="font-size:large; color:rgb(95, 95, 95)">
+				<p class="lead text-muted" style="font-size:large; color:rgb(95, 95, 95)">
 					<!-- <p>I am currently working with Mastercard</p> -->
 					 <!-- I've worked with JP Morgan, EXL, dunhummby and TCS in the past.
 					I have <a href="about.html">measure</a> yourself by the people who measure themselves by you. it only took me <a href="sidebar-right.html">six days</a>.  -->
@@ -193,7 +193,7 @@ img {
         });
     }
 
-	if ($(window).width() <= 767) {
+	if ($(window).width() <= 767 || $(window).width() >= 1000) {
         setTimeout(function() {
             $('.fade-in').addClass('visible'); // Show with delay without scrolling
         }, 500); // 500 ms delay before adding the class
