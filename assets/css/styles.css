@@ -890,3 +890,9 @@ footer.entry-meta .meta-in {
       margin: 0 auto; /* Center it */
   }
 }
+@media (min-width: 1690px){ /* Adjust max-width as needed */
+  #about-section .container {
+      width: 60%; /* Reduce width by 20% */
+      margin: 0 auto; /* Center it */
+  }
+}
