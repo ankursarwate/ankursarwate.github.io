@@ -1,5 +1,7 @@
 html {
   font-size: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 body {
   font-size: 15px;
@@ -7,6 +9,8 @@ body {
   font-family: "Open sans", Helvetica, Arial, sans-serif;
   color: #666666;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 .topspace {
   margin-top: 40px;
@@ -225,7 +229,7 @@ a:hover {
 
 **********************************************************************/
 #head {
-  background: #f4f4f4 url(../images/DSC_0726-original.JPG) top center;
+  background: #f4f4f4 url(../images/DSC_0726.JPG) top center;
   background-size: cover;
   color: #7C7C7C;
   /* opacity: 0.5; */
@@ -233,6 +237,45 @@ a:hover {
   transform: translateY(-100%); /* Start off-screen */
   opacity: 0;
   animation: slideIn 1.5s forwards; /* Fade in animation */
+  background-position: center; /* Center the image */
+  background-position-x: 150%;
+  background-position-y: 150%;
+    position: relative; /* Ensure relative positioning */
+    width: 100%;
+    background-position: top;
+}
+@media (max-width: 767px) { /* Targeting mobile devices */
+  #head {
+      background-position: top center; /* Keep the image at the top */
+      background-size: cover; /* Maintain the cover behavior */
+      height: 20vh; /* Set the height to 50% of the viewport height */
+      transform: scale(1.1); /* Slight zoom-in effect */
+      margin-bottom: 180px;
+  }
+}
+@media (max-width: 767px) { /* Targeting mobile devices */
+  #head .title {
+      color: #636363 !important; /* Change to the desired color for mobile */
+  }
+}
+@media (max-width: 767px) { /* Targeting mobile devices */
+  #head .tagline {
+      color: #636363 !important; /* Change to the desired color for mobile */
+  }
+}
+@media (max-width: 767px) {
+  .fade-in {
+      opacity: 0; /* Start as invisible */
+      transform: translateY(20px); /* Start slightly below */
+      transition: opacity 2s ease-out 0.5s, transform 2s ease-out; /* Smooth transition with delay */
+  }
+  
+  .fade-in.visible {
+      opacity: 1; /* Make it fully visible */
+      transform: translateY(0); /* Move to original position */
+      visibility: visible; /* Show it */
+      transition-delay: 0.5s; /* Add a delay */
+  }
 }
 
 @keyframes slideIn {
@@ -567,7 +610,9 @@ img {
   position: absolute;
   height: 4px;
   top: .53em;
-  width: 400%;
+  width: 100%;
+  padding-right: 0px;
+  margin-right: 0px;
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
 }
@@ -835,6 +880,7 @@ footer.entry-meta .meta-in {
 /////////////////////////////////////////////////////////////////////*/
 @media (min-width: 1200px) {
   .container {
+    /* max-width: 1080px; */
     max-width: 90%;
   }
 }
