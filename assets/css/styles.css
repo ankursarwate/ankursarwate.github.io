@@ -256,11 +256,13 @@ a:hover {
 @media (max-width: 767px) { /* Targeting mobile devices */
   #head .title {
       color: #636363 !important; /* Change to the desired color for mobile */
+      text-shadow: 2px 2px 4px rgba(107, 107, 107, 0.7) !important;
   }
 }
 @media (max-width: 767px) { /* Targeting mobile devices */
   #head .tagline {
       color: #636363 !important; /* Change to the desired color for mobile */
+      text-shadow: 2px 2px 4px rgba(107, 107, 107, 0.7) !important;
   }
 }
 @media (max-width: 767px) {
@@ -293,7 +295,9 @@ a:hover {
   width: 140px;
   height: 140px;
   overflow: hidden;
-  border: 9px solid rgba(105, 196, 216, 0.436);
+  /* border: 9px solid rgba(105, 147, 159, 0.436); */
+  /* border: 9px solid rgba(165, 173, 175, 0.436); */
+  border: 9px solid #88A0A8;
   margin: 0 auto;
   animation: slideIn 1.5s forwards 0.5s;
 }
