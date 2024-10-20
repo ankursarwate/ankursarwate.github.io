@@ -299,6 +299,8 @@ a:hover {
   /* border: 9px solid rgba(165, 173, 175, 0.436); */
   border: 9px solid #88A0A8;
   margin: 0 auto;
+  /* transform: translateY(-100%); */
+  opacity: 0;
   animation: slideIn 1.5s forwards 0.5s;
 }
 #head .title {
