@@ -1,196 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
-	
-	<title>Ankur Sarwate</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
+    
+    <title>Ankur Sarwate</title>
 
-	<link rel="shortcut icon" href="assets/images/thumb1.png">
-	
-	<!-- Bootstrap -->
-	<link href="assets/css/bootstrap.no-icons.min.css" rel="stylesheet">
-	<!-- Icons -->
-	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	<style>
-        /* .cricket-ball {
-            color: rgb(162, 54, 54); 
-            font-size: 33px; 
-		    text-shadow: 0 0 0 #8B0000;
-        }  */
+    <link rel="shortcut icon" href="assets/images/thumb1.png">
+    
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.no-icons.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 2.0s ease-out 0.3s, transform 2.0s ease-out; /* Smooth transition */
+            visibility: hidden; /* Hide it initially */
+        }
 
-		.fade-in {
-			opacity: 0;
-			transform: translateY(20px); /* Start slightly below */
-			transition: opacity 2.0s ease-out 0.3s, transform 2.0s ease-out; /* Smooth transition */
-			visibility: hidden; /* Hide it initially */
-		}
+        .fade-in.visible {
+            opacity: 1; /* Make it fully visible */
+            transform: translateY(0); /* Move to original position */
+            visibility: visible; /* Show it */
+            transition-delay: 0.5s;
+        }
 
-		.fade-in.visible {
-			opacity: 1; /* Make it fully visible */
-			transform: translateY(0); /* Move to original position */
-			visibility: visible; /* Show it */
-			transition-delay: 0.5s;
-		}
-		
-		.container {
-    width: 100%; /* Make sure the container uses the full width */
-    padding-right: 15px; /* Add some padding for small devices */
-    padding-left: 15px; /* Add some padding for small devices */
-    max-width: 100%; /* Prevent container from exceeding viewport */
-}
-.row {
-    margin-right: 0; /* Reset margins */
-    margin-left: 0; /* Reset margins */
-}
+        /* Patents Section Styling */
+        #patents-section {
+            background-color: #f9f9f9;
+            padding: 40px 0;
+        }
 
-img {
-    max-width: 100%; /* Ensure images scale down */
-    height: auto; /* Maintain aspect ratio */
-}
+        #patents-section h2 {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-* {
-    box-sizing: border-box; /* Include padding and border in element's total width */
-}
+        .patent-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .patent-card i {
+            font-size: 40px;
+            color: #2980b9;
+            margin-right: 20px;
+        }
+
+        .patent-card h3 {
+            font-family: 'Arial', sans-serif;
+            color: #2c3e50;
+            font-size: 1.5rem;
+        }
+
+        .patent-card p {
+            color: #7f8c8d;
+            font-size: 1rem;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .patent-card a {
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background-color: #3498db;
+            border-radius: 30px;
+            padding: 10px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            box-shadow: none; /* Removed text shadow */
+        }
+
+        .patent-card a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Container and Layout */
+        .container {
+            width: 100%; /* Ensure the container uses the full width */
+            padding-right: 15px; /* Add some padding for small devices */
+            padding-left: 15px; /* Add some padding for small devices */
+            max-width: 100%; /* Prevent container from exceeding viewport */
+        }
+
+        .row {
+            margin-right: 0; /* Reset margins */
+            margin-left: 0; /* Reset margins */
+        }
+
+        img {
+            max-width: 100%; /* Ensure images scale down */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        * {
+            box-sizing: border-box; /* Include padding and border in element's total width */
+        }
+
+        /* About Me Section Revert to Original */
+        #about-section {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        #about-section h2 {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #about-section p {
+            font-size: 18px;
+            color: rgb(95, 95, 95);
+            line-height: 1.8;
+        }
+
+        .patent-link {
+            font-size: 1.2rem;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .patent-link:hover {
+            text-decoration: underline;
+        }
 
     </style>
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
-<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> -->
-	<!-- Fonts -->
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
-	<!-- Custom styles -->
-	<link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-	<!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="assets/js/template.js"></script>
 </head>
 <body class="home">
 
 <header id="header">
-	<div id="head" class="parallax" parallax-speed="2">
-		<h1 id="logo" class="text-center">
-			<img class="img-circle" src="assets/images/ankur1.jpg" alt="">
-			<span class="title">Hi, I'm Ankur!</span>
-			<span class="tagline">Welcome to my personal website!<br>
-				<!-- <a href="">ankur.sarwate@gmail.com</a></span> -->
-		</h1>
-	</div>
-
+    <div id="head" class="parallax" parallax-speed="2">
+        <h1 id="logo" class="text-center">
+            <img class="img-circle" src="assets/images/ankur1.jpg" alt="">
+            <span class="title">Hi, I'm Ankur!</span>
+            <span class="tagline">Welcome to my personal website!</span>
+        </h1>
+    </div>
 </header>
 
 <main id="main">
-
-	<div class="row section topspace" id="about-section">
-	<div class="container fade-in">
-		<div class="row section clients topspace">
-			<h2 class="section-title"><span>About Me</span></h2>
-			<div class="col-lg-12">
-				
-			</div>
-		</div> <!-- /section -->
-		
-		<div class="row section topspace">
-			<div class="col-md-12">
-				<p class="lead text-muted" style="font-size:large; color:rgb(95, 95, 95)">
-					<!-- <p>I am currently working with Mastercard</p> -->
-					 <!-- I've worked with JP Morgan, EXL, dunhummby and TCS in the past.
-					I have <a href="about.html">measure</a> yourself by the people who measure themselves by you. it only took me <a href="sidebar-right.html">six days</a>.  -->
-				<!-- I have a knack for investing, whenever I'm not working, I'm mostly planning trips or thinking of going on a trek. -->
-			
-				I am a <b>Lead Data Engineer</b> at <b>Mastercard</b>, with over 10 years of experience specializing in data 
-				engineering, building innovative data-driven solutions. I have worked on building scalable data pipelines and 
-				architectures that drive actionable insights and enhance decision-making processes. I have successfully led 
-				cross-functional teams to implement robust ETL processes, manage large-scale data processing using tools like 
-				Apache Spark and Hadoop, and leverage cloud platforms such as Azure and Databricks to optimize data workflows. 
-				I use Python and SQL to develop data models and algorithms that facilitate real-time analytics and support 
-				strategic business initiatives. My experience across various projects includes enhancing customer targeting 
-				in Adtech, optimizing transaction processing in banking systems, and enabling data-driven decision-making in 
-				retail operations. 
-				My work has led to the publication of two patents: 
-				<br><b> 1) Authorization and Settlement Method in Blockchain Transactions.
-				<br> 2) User-Based Distributed Ledgers. </b>
-				<br> These patents focus on improving transaction security, efficiency, and user control within decentralized 
-				systems.
-				<br><br>
-				Outside of my professional life, I have a passion for learning and exploration. I enjoy reading non-fiction 
-				books, particularly those related to financial strategies and investment. This interest has also inspired me 
-				to create YouTube videos discussing books and investing tips, where I share insights with a wider audience. 
-				Traveling is a cherished hobby, and I find immense joy in trekking and exploring the mountains - I feel most 
-				alive outdoors. 
-				<br> Following and playing sports is a major part of my life as well, particularly cricket, football, and 
-				tennis, which I closely keep up with. I believe in a balanced life where technology and creativity coexist, 
-				and I strive to bring that philosophy into everything I do, both personally and professionally.
-
-			</div>
-		</div> <!-- / section -->
-		
-		<div class="row section clients topspace">
-		
-		</div> <!-- /section -->
-
-	</div>	<!-- /container -->
+<div class="loader">
+    <div class="spinner"></div>
 </div>
+<button id="mode-toggle" class="mode-toggle">
+    <i class="fa fa-moon-o" id="mode-icon"></i> <!-- Moon icon for dark mode -->
+</button>
+
+
+    <!-- About Me Section -->
+    <div class="row section topspace" id="about-section">
+        <div class="container fade-in">
+            <h2 class="section-title"><span>About Me</span></h2>
+            <div class="col-md-12">
+                <p class="lead text-muted" style="font-size:large; color:rgb(95, 95, 95)">
+                    I am a <b>Lead Data Engineer</b> at <b>Mastercard</b>, with over 10 years of experience specializing in data engineering, building innovative data-driven solutions. I have worked on building scalable data pipelines and architectures that drive actionable insights and enhance decision-making processes. I have successfully led cross-functional teams to implement robust ETL processes, manage large-scale data processing using tools like Apache Spark and Hadoop, and leverage cloud platforms such as Azure and Databricks to optimize data workflows. I use Python and SQL to develop data models and algorithms that facilitate real-time analytics and support strategic business initiatives. My experience across various projects includes enhancing customer targeting in Adtech, optimizing transaction processing in banking systems, and enabling data-driven decision-making in retail operations. My work has led to the publication of two patents: 
+                    <br><b> 1) Authorization and Settlement Method in Blockchain Transactions.
+                    <br> 2) User-Based Distributed Ledgers. </b>
+                    <br> These patents focus on improving transaction security, efficiency, and user control within decentralized systems.
+                    <br>For more info, visit the Patent section: 
+                    <a href="#patents-section" class="patent-link">Authorization and Settlement Method in Blockchain Transactions</a> 
+                    and 
+                    <a href="#patents-section" class="patent-link">User-Based Distributed Ledgers</a>.<br>
+					<br>
+                    Outside of my professional life, I have a passion for learning and exploration. I enjoy reading non-fiction books, particularly those related to financial strategies and investment. This interest has also inspired me to create YouTube videos discussing books and investing tips, where I share insights with a wider audience. Traveling is a cherished hobby, and I find immense joy in trekking and exploring the mountains - I feel most alive outdoors. 
+                    <br> Following and playing sports is a major part of my life as well, particularly cricket, football, and tennis, which I closely keep up with. I believe in a balanced life where technology and creativity coexist, and I strive to bring that philosophy into everything I do, both personally and professionally.
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+	
+
+    <!-- Patents Section -->
+    <div class="row section topspace" id="patents-section">
+        <div class="container fade-in">
+            <h2 class="section-title text-center"><span>My Patents</span></h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="patent-card">
+                        <div class="d-flex align-items-center">
+                            <i class="fa fa-cogs"></i>
+                            <h3>Authorization and Settlement Method in Blockchain Transactions</h3>
+                        </div>
+                        <p>This patent focuses on improving transaction security, efficiency, and user control within decentralized systems.</p>
+                        <a href="https://patents.google.com/patent/US20230131813A1/en" class="btn btn-primary" target="_blank">View Patent</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="patent-card">
+                        <div class="d-flex align-items-center">
+                            <i class="fa fa-lock"></i>
+                            <h3>User-Based Distributed Ledgers</h3>
+                        </div>
+                        <p>This patent explores the concept of user-based distributed ledgers for enhanced security and decentralized control.</p>
+                        <a href="https://patents.justia.com/patent/11954673" class="btn btn-primary" target="_blank">View Patent</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <footer id="footer">
-	<div class="container">
-
-
-			<div class="col-md-3 widget">
-				<h3 class="widget-title">Feel free to connect with me:</h3>
-				<div class="widget-body">
-					<p class="follow-me-icons">
-						<a href="https://cricheroes.com/player-profile/214389/ankur-sarwate/matches" target="_blank">
-							<img src="assets/images/images.png" alt="Cricheroes Logo" style="margin-top: -20px; margin-left: -4px; width: 28px; height: 28px; vertical-align: middle;">
-						</a>
-						<a href="mailto:ankur.sarwate@gmail.com" target="_blank"><i class="fa fa-envelope fa-2"></i></a>
-						<a href="https://github.com/ankursarwate" target="_blank"><i class="fa fa-github fa-2"></i></a>
-						<a href="https://www.linkedin.com/in/ankur-sarwate-0606901b2/" target="_blank"><i class="fa fa-linkedin fa-2"></i></a>
-						<a href="https://www.youtube.com/@ankursarwate" target="_blank"><i class="fa fa-youtube fa-2"></i></a>
-					</p>
-				</div>
-			</div>
+    <div class="container">
+        <div class="col-md-3 widget">
+            <h3 class="widget-title">Feel free to connect with me:</h3>
+            <div class="widget-body">
+                <p class="follow-me-icons">
+                    <a href="https://cricheroes.com/player-profile/214389/ankur-sarwate/matches" target="_blank">
+                        <img src="assets/images/images.png" alt="Cricheroes Logo" style="margin-top: -20px; margin-left: -4px; width: 28px; height: 28px; vertical-align: middle;">
+                    </a>
+                    <a href="mailto:ankur.sarwate@gmail.com" target="_blank"><i class="fa fa-envelope fa-2"></i></a>
+                    <a href="https://github.com/ankursarwate" target="_blank"><i class="fa fa-github fa-2"></i></a>
+                    <a href="https://www.linkedin.com/in/ankur-sarwate-0606901b2/" target="_blank"><i class="fa fa-linkedin fa-2"></i></a>
+                    <a href="https://www.youtube.com/@ankursarwate" target="_blank"><i class="fa fa-youtube fa-2"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
 </footer>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="assets/js/template.js"></script>
 <script>
-	$(document).ready(function() {
-    let scrollCount = 0; // Counter to track scrolls
+    $(document).ready(function() {
+        // Visibility check for fade-in effect
+        $(window).on('scroll', function() {
+            $('.fade-in').each(function() {
+                var elementTop = $(this).offset().top;
+                var windowBottom = $(window).scrollTop() + $(window).height();
 
-    // Function to check visibility of elements
-    function checkVisibility() {
-        $('.fade-in').each(function() {
-            var elementTop = $(this).offset().top;
-            var windowBottom = $(window).scrollTop() + $(window).height();
-
-            // Check if the element is in the viewport
-            if (elementTop < windowBottom && elementTop > $(window).scrollTop()) {
-                if (scrollCount >= 1) { // Trigger only after the second scroll
-                    $(this).addClass('visible'); // Add visible class to trigger animation
+                if (elementTop < windowBottom && elementTop > $(window).scrollTop()) {
+                    $(this).addClass('visible');
                 }
-            }
+            });
         });
-    }
-
-	if ($(window).width() <= 767 || $(window).width() >= 1000) {
-        setTimeout(function() {
-            $('.fade-in').addClass('visible'); // Show with delay without scrolling
-        }, 500); // 500 ms delay before adding the class
-    }
-
-    // Trigger checkVisibility on scroll
-    $(window).on('scroll', function() {
-        scrollCount++; // Increment scroll count
-        checkVisibility();
+        // Trigger the visibility check on load
+        $(window).trigger('scroll');
     });
+	
+	// Smooth scrolling effect for anchor links
+	$('a[href^="#"]').on('click', function(e) {
+		e.preventDefault(); // Prevent the default anchor click behavior
+		var target = $(this.getAttribute('href')); // Get the target element
+		$('html, body').stop().animate({
+			scrollTop: target.offset().top
+		}, 1000); // Smooth scroll to the target element over 1000ms
+	});
+	
+	window.addEventListener("load", function() {
+    document.querySelector(".loader").style.display = "none";
+});
+// Check if dark mode is enabled in localStorage
+if (localStorage.getItem('dark-mode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    document.getElementById('mode-icon').classList.remove('fa-moon-o');
+    document.getElementById('mode-icon').classList.add('fa-sun-o');
+}
 
-    // Initial check on page load
-    checkVisibility();
+// Toggle dark/light mode
+document.getElementById('mode-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    
+    // Save mode preference to localStorage
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('dark-mode', 'enabled');
+        document.getElementById('mode-icon').classList.remove('fa-moon-o');
+        document.getElementById('mode-icon').classList.add('fa-sun-o');
+    } else {
+        localStorage.setItem('dark-mode', 'disabled');
+        document.getElementById('mode-icon').classList.remove('fa-sun-o');
+        document.getElementById('mode-icon').classList.add('fa-moon-o');
+    }
 });
 
+
 </script>
+
 </body>
 </html>
